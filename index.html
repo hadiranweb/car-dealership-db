@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ساختار پایگاه‌داده نمایندگی‌های خودرو</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>ساختار پایگاه‌داده نمایندگی‌های خودرو</h1>
+        <p>این صفحه ساختار پایگاه‌داده نرمال‌سازی‌شده تا سطح 4NF را نمایش می‌دهد.</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>جداول اصلی</h2>
+            <div class="table-container">
+                <h3>جدول نمایندگی‌ها (Dealerships)</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>فیلد</th>
+                            <th>نوع داده</th>
+                            <th>توضیحات</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>DealershipID</td>
+                            <td>INT</td>
+                            <td>کلید اصلی</td>
+                        </tr>
+                        <tr>
+                            <td>Name</td>
+                            <td>VARCHAR(100)</td>
+                            <td>نام نمایندگی</td>
+                        </tr>
+                        <tr>
+                            <td>Address</td>
+                            <td>VARCHAR(255)</td>
+                            <td>آدرس نمایندگی</td>
+                        </tr>
+                        <tr>
+                            <td>ManagerName</td>
+                            <td>VARCHAR(100)</td>
+                            <td>نام مدیر نمایندگی</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="table-container">
+                <h3>جدول پرسنل (Employees)</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>فیلد</th>
+                            <th>نوع داده</th>
+                            <th>توضیحات</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>EmployeeID</td>
+                            <td>INT</td>
+                            <td>کلید اصلی</td>
+                        </tr>
+                        <tr>
+                            <td>Name</td>
+                            <td>VARCHAR(100)</td>
+                            <td>نام کارمند</td>
+                        </tr>
+                        <tr>
+                            <td>Position</td>
+                            <td>VARCHAR(100)</td>
+                            <td>سمت کارمند</td>
+                        </tr>
+                        <tr>
+                            <td>DealershipID</td>
+                            <td>INT</td>
+                            <td>کلید خارجی (مرجع به نمایندگی‌ها)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section>
+            <h2>جداول ارتباطی</h2>
+            <div class="table-container">
+                <h3>جدول کارمند-بخش (Employee-Department)</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>فیلد</th>
+                            <th>نوع داده</th>
+                            <th>توضیحات</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>EmployeeID</td>
+                            <td>INT</td>
+                            <td>کلید خارجی (مرجع به پرسنل)</td>
+                        </tr>
+                        <tr>
+                            <td>DepartmentID</td>
+                            <td>INT</td>
+                            <td>کلید خارجی (مرجع به بخش‌ها)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2023 ساختار پایگاه‌داده نمایندگی‌های خودرو. تمام حقوق محفوظ است.</p>
+    </footer>
+</body>
+</html>
